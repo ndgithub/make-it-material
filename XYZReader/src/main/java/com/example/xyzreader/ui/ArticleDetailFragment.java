@@ -65,7 +65,7 @@ public class ArticleDetailFragment extends Fragment implements
 
     private int mTopInset;
     private View mPhotoContainerView;
-    private MyImageView mPhotoView;
+    private ImageView mPhotoView;
     private int mScrollY;
     private boolean mIsCard = false;
     private int mStatusBarFullOpacityBottom;
@@ -122,25 +122,7 @@ public class ArticleDetailFragment extends Fragment implements
     }
 
 
-    public static void bounceAppBar(final View v) {
 
-        Runnable endAction = new Runnable() {
-            public void run() {
-
-                try {
-                    sleep(200);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-
-                v.animate().translationYBy(300).setDuration(1000).setInterpolator(new DecelerateInterpolator());
-
-            }
-        };
-        v.animate().translationYBy(-300).setDuration(1000).
-                setInterpolator(new AccelerateInterpolator()).withEndAction(endAction);
-
-    }
 
     @Override
     public void onResume() {
@@ -152,7 +134,7 @@ public class ArticleDetailFragment extends Fragment implements
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         mRootView = inflater.inflate(R.layout.fragment_article_detail, container, false);
-        mPhotoView = (MyImageView) mRootView.findViewById(R.id.photo);
+        mPhotoView = (ImageView) mRootView.findViewById(R.id.photo);
         if (getResources().getBoolean(R.bool.landscape)) {
             mPhotoView.setVisibility(View.GONE);
         }
