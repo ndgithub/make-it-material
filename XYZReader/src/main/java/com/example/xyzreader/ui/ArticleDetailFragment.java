@@ -135,10 +135,11 @@ public class ArticleDetailFragment extends Fragment implements
                              Bundle savedInstanceState) {
         mRootView = inflater.inflate(R.layout.fragment_article_detail, container, false);
         mPhotoView = (ImageView) mRootView.findViewById(R.id.photo);
-        if (getResources().getBoolean(R.bool.landscape)) {
-            mPhotoView.setVisibility(View.GONE);
-        }
+
         mPhotoContainerView = mRootView.findViewById(R.id.appbarlayout);
+        if (getResources().getBoolean(R.bool.landscape) && getResources().getBoolean(R.bool.small_screen)) {
+            mPhotoContainerView.setVisibility(View.GONE);
+        }
         mScrollView = (NestedScrollView) mRootView.findViewById(R.id.scrollview);
         mStatusBarColorDrawable = new ColorDrawable(0);
 
