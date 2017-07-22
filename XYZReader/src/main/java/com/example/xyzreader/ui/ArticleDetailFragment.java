@@ -19,6 +19,7 @@ import java.util.GregorianCalendar;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ShareCompat;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.graphics.Palette;
@@ -34,6 +35,7 @@ import android.view.animation.AccelerateInterpolator;
 import android.view.animation.BounceInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.android.volley.VolleyError;
@@ -69,6 +71,7 @@ public class ArticleDetailFragment extends Fragment implements
     private int mScrollY;
     private boolean mIsCard = false;
     private int mStatusBarFullOpacityBottom;
+    private FloatingActionButton fab;
 
     private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.sss");
     // Use default locale format
@@ -135,14 +138,17 @@ public class ArticleDetailFragment extends Fragment implements
                              Bundle savedInstanceState) {
         mRootView = inflater.inflate(R.layout.fragment_article_detail, container, false);
         mPhotoView = (ImageView) mRootView.findViewById(R.id.photo);
-
+LinearLayout metabar = (LinearLayout) mRootView.findViewById(R.id.meta_bar);
+        mScrollView = (NestedScrollView) mRootView.findViewById(R.id.scrollview);
         mPhotoContainerView = mRootView.findViewById(R.id.appbarlayout);
         if (getResources().getBoolean(R.bool.landscape) && getResources().getBoolean(R.bool.small_screen)) {
-            mPhotoContainerView.setVisibility(View.GONE);
-        }
-        mScrollView = (NestedScrollView) mRootView.findViewById(R.id.scrollview);
-        mStatusBarColorDrawable = new ColorDrawable(0);
+            mPhotoView.setVisibility(View.GONE);
 
+        }
+
+
+        mStatusBarColorDrawable = new ColorDrawable(0);
+        fab = (FloatingActionButton) mRootView.findViewById(R.id.share_fab);
         mRootView.findViewById(R.id.share_fab).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

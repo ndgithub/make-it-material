@@ -36,7 +36,7 @@
         android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="-100dp"
+        android:layout_marginTop="@dimen/detail_card_top_margin"
         android:elevation="100dp"
 android:fitsSystemWindows="true"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
