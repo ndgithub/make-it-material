@@ -1,3 +1,10 @@
-= XYZ Reader Starter Code
+# Make it Material 
+This is my Udacity Android NanoDegree project that required taking an existing app and updating it to material design specifications. 
 
-This repository stores the starter code for the XYZ Reader project in Udacity's Android Nanodegree.
+
+# Screenshots
+<img src="https://raw.githubusercontent.com/ndgithub/make-it-material/master/screenshots/Screenshot_1510376587.png" alt="alt text" width="400"> 
+<img src="https://raw.githubusercontent.com/ndgithub/make-it-material/master/screenshots/Screenshot_1510376630.png" alt="alt text" width="400"> <img src="https://raw.githubusercontent.com/ndgithub/make-it-material/master/screenshots/Screenshot_1510376856.png" alt="alt text" width="600">
+
+
+
