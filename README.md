@@ -1,7 +1,7 @@
 # Make it Material 
 This is my Udacity Android NanoDegree project that required taking an existing app and updating it to material design specifications. 
 
-# Screenshots
+## Screenshots
 <table border="0" width="100%">
   <tr>
     <td>
